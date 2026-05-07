@@ -4,274 +4,163 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy · Dividend Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --green-50:  #f0f9f4;
-    --green-100: #dcf2e3;
-    --green-500: #0a6e3a;
-    --green-600: #0a5e32;
-    --green-700: #084c28;
-    --gold:      #c8a037;
-    --gold-light:#e6c773;
-    --bg:        #fafafa;
-    --surface:   #ffffff;
-    --text:      #0a0a0a;
-    --text-2:    #404040;
-    --text-3:    #737373;
-    --border:    #e5e5e5;
-    --shadow:    0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.04);
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", system-ui, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-  }
+:root {
+  --bg: #0a0a0a; --bg-2: #131313; --surface: #1a1a1a;
+  --border: rgba(255,255,255,0.08); --border-strong: rgba(255,255,255,0.14);
+  --text: #ffffff; --text-2: rgba(255,255,255,0.72); --text-3: rgba(255,255,255,0.5); --text-4: rgba(255,255,255,0.32);
+  --green: #10b981; --green-bright: #34d399; --green-deep: #047857;
+  --gold: #d4af37; --gold-light: #f4d57a;
+  --serif: 'Instrument Serif', Georgia, serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  background: var(--bg); color: var(--text); line-height: 1.5;
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.011em;
+}
 
-  .nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(255,255,255,0.72);
-    backdrop-filter: saturate(180%) blur(20px);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-  }
-  .nav-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 14px 28px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    color: var(--text);
-    font-weight: 700;
-    font-size: 17px;
-  }
-  .brand-icon {
-    width: 36px; height: 36px;
-    border-radius: 10px;
-    background: linear-gradient(135deg, var(--green-500), var(--green-700));
-    display: flex; align-items: center; justify-content: center;
-    color: var(--gold-light);
-    font-weight: 800;
-    font-size: 18px;
-  }
-  .nav-links {
-    display: flex;
-    gap: 32px;
-    align-items: center;
-  }
-  .nav-links a {
-    color: var(--text-2);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-  }
-  .nav-links a:hover { color: var(--green-500); }
-  .nav-links a.active { color: var(--green-500); }
+.bg-glow { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.bg-glow::before {
+  content: ""; position: absolute; top: -300px; left: 50%; transform: translateX(-50%);
+  width: 1200px; height: 800px;
+  background: radial-gradient(ellipse at center, rgba(16,185,129,0.12) 0%, transparent 60%);
+  filter: blur(60px);
+}
+.noise {
+  position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: 0.025;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
 
-  .hero {
-    padding: 80px 28px 48px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: "";
-    position: absolute;
-    top: -200px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 800px;
-    height: 500px;
-    background: radial-gradient(ellipse, rgba(10,110,58,0.06) 0%, transparent 65%);
-    pointer-events: none;
-  }
-  .hero-inner { max-width: 720px; margin: 0 auto; position: relative; }
-  .hero-eyebrow {
-    display: inline-block;
-    background: var(--green-100);
-    color: var(--green-700);
-    padding: 6px 14px;
-    border-radius: 999px;
-    font-size: 13px;
-    font-weight: 600;
-    margin-bottom: 24px;
-  }
-  .hero h1 {
-    font-size: clamp(36px, 5vw, 52px);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
-    margin-bottom: 16px;
-  }
-  .hero-sub {
-    font-size: 18px;
-    color: var(--text-3);
-    max-width: 540px;
-    margin: 0 auto 16px;
-  }
-  .updated-pill {
-    display: inline-block;
-    margin-top: 12px;
-    font-size: 13px;
-    color: var(--text-3);
-    background: var(--surface);
-    padding: 6px 14px;
-    border-radius: 999px;
-    border: 1px solid var(--border);
-  }
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(10,10,10,0.6);
+  backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner { max-width: 1200px; margin: 0 auto; padding: 18px 32px; display: flex; justify-content: space-between; align-items: center; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); font-weight: 600; font-size: 16px; letter-spacing: -0.015em; }
+.brand-mark {
+  width: 32px; height: 32px; border-radius: 9px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%), linear-gradient(135deg, var(--green-deep), var(--green));
+  display: grid; place-items: center; position: relative;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0,0,0,0.2), 0 4px 12px rgba(16,185,129,0.25);
+}
+.brand-mark::after {
+  content: "$"; font-family: var(--serif); font-size: 18px; font-weight: 600;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.nav-links { display: flex; gap: 36px; align-items: center; }
+.nav-links a { color: var(--text-2); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover { color: var(--text); }
+.nav-links a.active { color: var(--green-bright); }
 
-  .container {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 32px 28px 96px;
-  }
+.section { position: relative; z-index: 2; }
+.container-narrow { max-width: 760px; margin: 0 auto; padding: 0 32px; }
 
-  .summary-card {
-    background: linear-gradient(135deg, var(--green-700) 0%, var(--green-500) 100%);
-    color: white;
-    padding: 32px;
-    border-radius: 16px;
-    margin-bottom: 56px;
-    position: relative;
-    overflow: hidden;
-  }
-  .summary-card::before {
-    content: "";
-    position: absolute;
-    top: -100px; right: -100px;
-    width: 300px; height: 300px;
-    background: radial-gradient(circle, rgba(200,160,55,0.18) 0%, transparent 60%);
-    pointer-events: none;
-  }
-  .summary-eyebrow {
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    opacity: 0.85;
-    margin-bottom: 8px;
-    color: var(--gold-light);
-  }
-  .summary-card h2 {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    letter-spacing: -0.01em;
-  }
-  .summary-card p {
-    color: rgba(255,255,255,0.9);
-    line-height: 1.6;
-  }
+.hero {
+  padding: 100px 0 64px; text-align: center;
+}
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+  padding: 7px 16px; border-radius: 999px;
+  font-size: 12.5px; font-weight: 500; color: var(--text-2); margin-bottom: 28px;
+}
+.hero h1 {
+  font-size: clamp(40px, 6vw, 64px); font-weight: 700; letter-spacing: -0.035em; line-height: 1.05; margin-bottom: 20px;
+}
+.hero h1 em {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  background: linear-gradient(135deg, var(--green-bright), var(--gold-light));
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.hero-sub { font-size: 17px; color: var(--text-2); max-width: 520px; margin: 0 auto; line-height: 1.55; }
+.updated-pill {
+  display: inline-block; margin-top: 28px; font-size: 12.5px; color: var(--text-3);
+  background: rgba(255,255,255,0.04); padding: 6px 14px; border-radius: 999px; border: 1px solid var(--border);
+}
 
-  .container h2 {
-    font-size: 24px;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    margin: 56px 0 16px;
-    color: var(--text);
-  }
-  .container h2:first-of-type { margin-top: 0; }
-  .container p {
-    color: var(--text-2);
-    margin-bottom: 16px;
-    font-size: 16px;
-  }
-  .container ul {
-    margin-bottom: 24px;
-    list-style: none;
-  }
-  .container ul li {
-    padding-left: 28px;
-    margin-bottom: 12px;
-    color: var(--text-2);
-    position: relative;
-    font-size: 16px;
-  }
-  .container ul li::before {
-    content: "";
-    position: absolute;
-    left: 4px;
-    top: 11px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--green-500);
-  }
-  .container a { color: var(--green-500); font-weight: 500; }
-  .container a:hover { text-decoration: underline; }
-  .container strong { color: var(--text); font-weight: 600; }
+.content { padding: 24px 0 120px; }
 
-  .footer {
-    background: var(--surface);
-    border-top: 1px solid var(--border);
-    padding: 56px 28px 32px;
-  }
-  .footer-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 24px;
-  }
-  .footer-brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--text);
-    text-decoration: none;
-    font-weight: 600;
-  }
-  .footer-links {
-    display: flex;
-    gap: 28px;
-  }
-  .footer-links a {
-    color: var(--text-2);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-  }
-  .footer-links a:hover { color: var(--green-500); }
-  .footer-copy {
-    max-width: 1100px;
-    margin: 32px auto 0;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-    color: var(--text-3);
-    font-size: 13px;
-    text-align: center;
-  }
+.summary {
+  background: linear-gradient(135deg, rgba(16,185,129,0.1) 0%, rgba(16,185,129,0.02) 100%);
+  border: 1px solid rgba(16,185,129,0.2); border-radius: 20px;
+  padding: 32px; margin-bottom: 64px; position: relative; overflow: hidden;
+}
+.summary::before {
+  content: ""; position: absolute; top: -100px; right: -100px; width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 60%); filter: blur(20px);
+}
+.summary-eyebrow {
+  font-size: 12px; font-weight: 600; color: var(--green-bright);
+  text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; position: relative;
+}
+.summary h2 {
+  font-family: var(--serif); font-size: 28px; font-weight: 400; letter-spacing: -0.02em;
+  line-height: 1.2; margin-bottom: 12px; position: relative;
+}
+.summary p { color: var(--text-2); font-size: 16px; line-height: 1.6; position: relative; }
 
-  @media (max-width: 720px) {
-    .nav-links { gap: 16px; font-size: 13px; }
-    .hero { padding: 56px 24px 32px; }
-    .container { padding: 24px 24px 64px; }
-    .summary-card { padding: 24px; }
-    .container h2 { font-size: 20px; }
-    .footer-inner { flex-direction: column; gap: 24px; text-align: center; }
-  }
+.content h2 {
+  font-size: 24px; font-weight: 700; letter-spacing: -0.02em; margin: 56px 0 16px;
+}
+.content h2:first-of-type { margin-top: 0; }
+.content p { color: var(--text-2); margin-bottom: 16px; font-size: 15.5px; line-height: 1.65; }
+.content ul { margin-bottom: 24px; list-style: none; }
+.content ul li {
+  padding-left: 24px; margin-bottom: 12px; color: var(--text-2);
+  position: relative; font-size: 15.5px; line-height: 1.65;
+}
+.content ul li::before {
+  content: ""; position: absolute; left: 4px; top: 10px;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--green-bright);
+}
+.content a { color: var(--green-bright); text-decoration: none; font-weight: 500; }
+.content a:hover { color: var(--text); }
+.content strong { color: var(--text); font-weight: 600; }
+
+.footer {
+  border-top: 1px solid var(--border); padding: 56px 0 32px; background: var(--bg-2);
+  position: relative; z-index: 2;
+}
+.footer-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 32px;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;
+}
+.footer-links { display: flex; gap: 28px; }
+.footer-links a { color: var(--text-2); text-decoration: none; font-size: 14px; font-weight: 500; }
+.footer-links a:hover { color: var(--text); }
+.footer-copy {
+  max-width: 1200px; margin: 32px auto 0; padding: 24px 32px 0; border-top: 1px solid var(--border);
+  color: var(--text-4); font-size: 12.5px; text-align: center;
+}
+
+@media (max-width: 720px) {
+  .nav-inner { padding: 14px 20px; } .nav-links { gap: 16px; font-size: 13px; }
+  .container-narrow { padding: 0 20px; }
+  .hero { padding: 64px 0 40px; } .hero h1 { font-size: 36px; }
+  .summary { padding: 24px; } .summary h2 { font-size: 22px; }
+  .content h2 { font-size: 20px; }
+  .footer-inner { flex-direction: column; gap: 24px; text-align: center; }
+}
 </style>
 </head>
 <body>
 
+<div class="bg-glow"></div>
+<div class="noise"></div>
+
 <nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="brand">
-      <div class="brand-icon">$</div>
+      <span class="brand-mark"></span>
       Dividend Tracker
     </a>
     <div class="nav-links">
@@ -282,86 +171,88 @@
   </div>
 </nav>
 
-<header class="hero">
-  <div class="hero-inner">
-    <div class="hero-eyebrow">Privacy Policy</div>
-    <h1>Your data stays<br>on your device.</h1>
-    <p class="hero-sub">No accounts. No tracking. No analytics. We built Dividend Tracker the way we'd want a finance app to be built.</p>
+<section class="section hero">
+  <div class="container-narrow">
+    <div class="eyebrow">Privacy Policy</div>
+    <h1>Your data stays<br><em>on your device.</em></h1>
+    <p class="hero-sub">No accounts. No tracking. No analytics. Built the way a finance app should be built.</p>
     <div class="updated-pill">Last updated: May 7, 2026</div>
   </div>
-</header>
+</section>
 
-<main class="container">
+<section class="section content">
+  <div class="container-narrow">
 
-<div class="summary-card">
-  <div class="summary-eyebrow">In Plain English</div>
-  <h2>The short version</h2>
-  <p>Dividend Tracker stores your portfolio data locally on your device. We don't collect personal information, don't use third-party analytics, and don't share data with advertisers. There are no user accounts to create.</p>
-</div>
+    <div class="summary">
+      <div class="summary-eyebrow">In Plain English</div>
+      <h2>The short version</h2>
+      <p>Dividend Tracker stores your portfolio data locally on your device. We don't collect personal information, don't use third-party analytics, and don't share data with advertisers. There are no user accounts to create.</p>
+    </div>
 
-<h2>What the app collects</h2>
-<p>Dividend Tracker collects only what's required for the app to function:</p>
-<ul>
-  <li><strong>Holdings data</strong> — ticker symbols, shares, cost basis, purchase dates entered manually by you. Stored locally on your device. Optionally synced via Apple iCloud if iCloud is enabled in iOS settings.</li>
-  <li><strong>Goals and preferences</strong> — income targets, theme selection, notification preferences. Stored locally on your device.</li>
-  <li><strong>Brokerage connection metadata</strong> — read-only access tokens stored securely in the iOS Keychain when you choose to connect a broker. See "Brokerage Connections" below.</li>
-  <li><strong>Apple subscription receipts</strong> — handled entirely by Apple's StoreKit. We never see your payment details, Apple ID, or billing address.</li>
-</ul>
+    <h2>What the app collects</h2>
+    <p>Dividend Tracker collects only what's required for the app to function:</p>
+    <ul>
+      <li><strong>Holdings data</strong> — ticker symbols, shares, cost basis, purchase dates entered manually by you. Stored locally on your device. Optionally synced via Apple iCloud if iCloud is enabled in iOS settings.</li>
+      <li><strong>Goals and preferences</strong> — income targets, theme selection, notification preferences. Stored locally.</li>
+      <li><strong>Brokerage connection metadata</strong> — read-only access tokens stored securely in the iOS Keychain when you choose to connect a broker.</li>
+      <li><strong>Apple subscription receipts</strong> — handled entirely by Apple's StoreKit. We never see your payment details.</li>
+    </ul>
 
-<h2>What the app does not collect</h2>
-<ul>
-  <li>No name, email, phone number, or address</li>
-  <li>No third-party analytics — no Google Analytics, Firebase Analytics, Segment, or Mixpanel</li>
-  <li>No cross-app or cross-website tracking</li>
-  <li>No advertising identifiers</li>
-  <li>No data sold, rented, or shared with advertisers</li>
-  <li>No user accounts, sign-up flows, or login</li>
-</ul>
+    <h2>What the app does not collect</h2>
+    <ul>
+      <li>No name, email, phone number, or address</li>
+      <li>No third-party analytics — no Google Analytics, Firebase Analytics, Segment, or Mixpanel</li>
+      <li>No cross-app or cross-website tracking</li>
+      <li>No advertising identifiers</li>
+      <li>No data sold, rented, or shared with advertisers</li>
+      <li>No user accounts, sign-up flows, or login</li>
+    </ul>
 
-<h2>Market data</h2>
-<p>Stock prices and dividend information are fetched from Finnhub through an anonymous proxy server. Each request contains only the ticker symbols requested (such as "VOO" or "QQQI"). These queries are not associated with any user identifier — Finnhub has no way to identify which user made a query.</p>
+    <h2>Market data</h2>
+    <p>Stock prices and dividend information are fetched from Finnhub through an anonymous proxy server. Each request contains only the ticker symbols requested (such as "VOO" or "QQQI"). These queries are not associated with any user identifier.</p>
 
-<h2>Brokerage connections (optional)</h2>
-<p>If you choose to connect a brokerage account, the connection is handled through SnapTrade — a regulated third-party service that aggregates broker data feeds. The app:</p>
-<ul>
-  <li>Receives only <strong>read-only</strong> access to your account holdings and transactions</li>
-  <li>Cannot place trades, transfer money, or modify your account in any way</li>
-  <li>Stores the connection token securely in the iOS Keychain on your device only</li>
-  <li>Never sees your broker username or password — these are entered directly into SnapTrade's secure portal</li>
-</ul>
-<p>You can disconnect your broker at any time from the Settings tab. SnapTrade's privacy practices are documented at <a href="https://snaptrade.com/privacy">snaptrade.com/privacy</a>.</p>
+    <h2>Brokerage connections (optional)</h2>
+    <p>If you choose to connect a brokerage account, the connection is handled through SnapTrade — a regulated third-party service. The app:</p>
+    <ul>
+      <li>Receives only <strong>read-only</strong> access to your account holdings and transactions</li>
+      <li>Cannot place trades, transfer money, or modify your account in any way</li>
+      <li>Stores the connection token securely in the iOS Keychain on your device only</li>
+      <li>Never sees your broker username or password — these are entered directly into SnapTrade's secure portal</li>
+    </ul>
+    <p>Disconnect at any time from the Settings tab. SnapTrade's privacy practices: <a href="https://snaptrade.com/privacy">snaptrade.com/privacy</a></p>
 
-<h2>Subscriptions and payments</h2>
-<p>Dividend Tracker offers optional Pro subscriptions via Apple's In-App Purchase system. All payment processing is handled by Apple. The app receives only:</p>
-<ul>
-  <li>Subscription status (active, expired, trial)</li>
-  <li>Anonymous receipt validation tokens used to verify purchases</li>
-</ul>
-<p>The app never sees your credit card number, Apple ID, or billing address.</p>
+    <h2>Subscriptions and payments</h2>
+    <p>Pro subscriptions are processed via Apple's In-App Purchase system. The app receives:</p>
+    <ul>
+      <li>Subscription status (active, expired, trial)</li>
+      <li>Anonymous receipt validation tokens used to verify purchases</li>
+    </ul>
+    <p>The app never sees your credit card number, Apple ID, or billing address.</p>
 
-<h2>Children's privacy</h2>
-<p>Dividend Tracker is not directed at children under 13. The app does not knowingly collect data from children. If you believe a child has used the app, no action is required — the app stores no personal data about any user.</p>
+    <h2>Children's privacy</h2>
+    <p>Dividend Tracker is not directed at children under 13. The app does not knowingly collect data from children.</p>
 
-<h2>Data retention and deletion</h2>
-<p>All your data is stored locally on your device. To delete it:</p>
-<ul>
-  <li>Delete the app from your iPhone — all local data is removed</li>
-  <li>Disable iCloud sync in iOS Settings if you have iCloud-synced copies</li>
-  <li>Disconnect your broker connection in Settings → Broker Sync</li>
-</ul>
+    <h2>Data retention and deletion</h2>
+    <p>All your data is stored locally on your device. To delete it:</p>
+    <ul>
+      <li>Delete the app from your iPhone — all local data is removed</li>
+      <li>Disable iCloud sync in iOS Settings if iCloud-synced</li>
+      <li>Disconnect your broker connection in Settings → Broker Sync</li>
+    </ul>
 
-<h2>Changes to this policy</h2>
-<p>We may update this policy as the app evolves. Changes will be posted here with an updated "Last updated" date. Significant changes will also be announced in-app.</p>
+    <h2>Changes to this policy</h2>
+    <p>We may update this policy as the app evolves. Changes will be posted here with an updated date. Significant changes will also be announced in-app.</p>
 
-<h2>Contact</h2>
-<p>Questions about privacy? Email <a href="mailto:es384425@gmail.com">es384425@gmail.com</a>.</p>
+    <h2>Contact</h2>
+    <p>Questions about privacy? Email <a href="mailto:es384425@gmail.com">es384425@gmail.com</a>.</p>
 
-</main>
+  </div>
+</section>
 
 <footer class="footer">
   <div class="footer-inner">
-    <a href="index.html" class="footer-brand">
-      <div class="brand-icon">$</div>
+    <a href="index.html" class="brand">
+      <span class="brand-mark"></span>
       Dividend Tracker
     </a>
     <div class="footer-links">
