@@ -4,165 +4,221 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Support · Dividend Tracker</title>
-<meta name="description" content="Get help with Dividend Tracker — answers to common questions and how to contact support.">
 <style>
   :root {
-    --green: #0a6e3a;
-    --green-dark: #084c28;
-    --green-light: #e8f5ed;
-    --gold: #c8a037;
-    --bg: #fafafa;
-    --surface: #ffffff;
-    --text: #18181b;
-    --text-muted: #71717a;
-    --border: #e4e4e7;
+    --green-50:  #f0f9f4;
+    --green-100: #dcf2e3;
+    --green-500: #0a6e3a;
+    --green-600: #0a5e32;
+    --green-700: #084c28;
+    --gold:      #c8a037;
+    --gold-light:#e6c773;
+    --bg:        #fafafa;
+    --surface:   #ffffff;
+    --text:      #0a0a0a;
+    --text-2:    #404040;
+    --text-3:    #737373;
+    --border:    #e5e5e5;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", system-ui, sans-serif;
     background: var(--bg);
     color: var(--text);
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
+
   .nav {
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    padding: 16px 24px;
     position: sticky;
     top: 0;
-    z-index: 10;
-    backdrop-filter: blur(12px);
-    background: rgba(255, 255, 255, 0.85);
+    z-index: 100;
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
   }
   .nav-inner {
-    max-width: 880px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 14px 28px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
   }
   .brand {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--text);
     font-weight: 700;
     font-size: 17px;
-    color: var(--text);
-    text-decoration: none;
   }
   .brand-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--gold);
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--green-500), var(--green-700));
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold-light);
     font-weight: 800;
-    font-size: 16px;
+    font-size: 18px;
   }
-  .nav-links {
-    display: flex;
-    gap: 24px;
-    font-size: 14px;
-  }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
   .nav-links a {
-    color: var(--text-muted);
+    color: var(--text-2);
     text-decoration: none;
-    transition: color 0.15s;
+    font-size: 14px;
+    font-weight: 500;
   }
-  .nav-links a:hover { color: var(--green); }
-  .nav-links a.active { color: var(--green); font-weight: 600; }
+  .nav-links a:hover { color: var(--green-500); }
+  .nav-links a.active { color: var(--green-500); }
 
   .hero {
-    background: linear-gradient(180deg, var(--green-light) 0%, transparent 100%);
-    padding: 72px 24px 56px;
+    padding: 80px 28px 48px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
   }
-  .hero-inner { max-width: 720px; margin: 0 auto; }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 500px;
+    background: radial-gradient(ellipse, rgba(10,110,58,0.06) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 720px; margin: 0 auto; position: relative; }
+  .hero-eyebrow {
+    display: inline-block;
+    background: var(--green-100);
+    color: var(--green-700);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
   .hero h1 {
-    font-size: 44px;
+    font-size: clamp(36px, 5vw, 52px);
     font-weight: 800;
-    letter-spacing: -0.02em;
-    margin-bottom: 12px;
-    color: var(--text);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 16px;
   }
-  .hero .subtitle {
+  .hero-sub {
     font-size: 18px;
-    color: var(--text-muted);
+    color: var(--text-3);
+    max-width: 540px;
+    margin: 0 auto;
   }
 
   .container {
-    max-width: 720px;
+    max-width: 760px;
     margin: 0 auto;
-    padding: 48px 24px 96px;
+    padding: 32px 28px 96px;
   }
 
   .contact-card {
-    background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+    background: linear-gradient(135deg, var(--green-700) 0%, var(--green-500) 100%);
     color: white;
-    padding: 40px 32px;
-    border-radius: 16px;
+    padding: 48px 36px;
+    border-radius: 20px;
     text-align: center;
-    margin-bottom: 56px;
-    box-shadow: 0 8px 24px rgba(10, 110, 58, 0.15);
+    margin-bottom: 64px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(10,110,58,0.18);
+  }
+  .contact-card::before {
+    content: "";
+    position: absolute;
+    top: -150px; right: -150px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(200,160,55,0.2) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .contact-eyebrow {
+    color: var(--gold-light);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+    position: relative;
   }
   .contact-card h2 {
-    color: white;
-    font-size: 24px;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
     margin-bottom: 8px;
-    font-weight: 700;
+    position: relative;
   }
   .contact-card p {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255,255,255,0.85);
     margin-bottom: 24px;
-    font-size: 15px;
+    font-size: 16px;
+    position: relative;
   }
   .contact-button {
     display: inline-block;
     background: white;
-    color: var(--green);
-    padding: 12px 28px;
+    color: var(--green-700);
+    padding: 14px 32px;
     border-radius: 999px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 15px;
-    transition: transform 0.15s, box-shadow 0.15s;
+    transition: transform 0.15s;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
-  .contact-button:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  .contact-card .response-time {
+  .contact-button:hover { transform: translateY(-2px); }
+  .response-time {
     margin-top: 16px;
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255,255,255,0.7);
+    position: relative;
   }
 
-  .section-title {
-    font-size: 28px;
+  .section-eyebrow {
+    color: var(--green-500);
+    font-size: 13px;
     font-weight: 700;
-    letter-spacing: -0.01em;
-    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    margin-bottom: 32px;
     color: var(--text);
   }
 
   .faq-item {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 14px;
     margin-bottom: 12px;
     overflow: hidden;
-    transition: box-shadow 0.15s;
+    transition: border-color 0.15s, box-shadow 0.15s;
   }
   .faq-item:hover {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    border-color: var(--green-100);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+  .faq-item.open {
+    border-color: var(--green-500);
+    box-shadow: 0 4px 16px rgba(10,110,58,0.08);
   }
   .faq-question {
-    padding: 18px 24px;
+    padding: 22px 28px;
     font-weight: 600;
     font-size: 16px;
     cursor: pointer;
@@ -171,46 +227,56 @@
     align-items: center;
     color: var(--text);
     user-select: none;
+    transition: color 0.15s;
   }
+  .faq-item:hover .faq-question { color: var(--green-500); }
   .faq-question::after {
     content: "+";
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 300;
-    color: var(--text-muted);
-    transition: transform 0.2s;
+    color: var(--text-3);
+    transition: transform 0.25s;
+    margin-left: 16px;
+    flex-shrink: 0;
   }
   .faq-item.open .faq-question::after {
     transform: rotate(45deg);
+    color: var(--green-500);
   }
   .faq-answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.25s ease;
+    transition: max-height 0.3s ease;
   }
   .faq-answer-inner {
-    padding: 0 24px 20px;
-    color: #3f3f46;
+    padding: 0 28px 24px;
+    color: var(--text-2);
     font-size: 15px;
+    line-height: 1.65;
   }
-  .faq-item.open .faq-answer {
-    max-height: 500px;
-  }
-  .faq-answer a { color: var(--green); font-weight: 500; }
+  .faq-item.open .faq-answer { max-height: 500px; }
+  .faq-answer a { color: var(--green-500); font-weight: 500; }
 
   .resources {
-    margin-top: 56px;
-    padding-top: 32px;
-    border-top: 1px solid var(--border);
+    margin-top: 64px;
+    padding: 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
   }
   .resources h3 {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 700;
     margin-bottom: 12px;
+    color: var(--text);
+  }
+  .resources-list {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
   }
   .resources a {
-    display: inline-block;
-    margin-right: 24px;
-    color: var(--green);
+    color: var(--green-500);
     text-decoration: none;
     font-size: 15px;
     font-weight: 500;
@@ -220,34 +286,53 @@
   .footer {
     background: var(--surface);
     border-top: 1px solid var(--border);
-    padding: 40px 24px;
+    padding: 56px 28px 32px;
+  }
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .footer-links { display: flex; gap: 28px; }
+  .footer-links a {
+    color: var(--text-2);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .footer-links a:hover { color: var(--green-500); }
+  .footer-copy {
+    max-width: 1100px;
+    margin: 32px auto 0;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--text-3);
+    font-size: 13px;
     text-align: center;
   }
-  .footer-inner { max-width: 720px; margin: 0 auto; }
-  .footer-links {
-    display: flex;
-    gap: 24px;
-    justify-content: center;
-    margin-bottom: 16px;
-    font-size: 14px;
-  }
-  .footer-links a {
-    color: var(--text-muted);
-    text-decoration: none;
-  }
-  .footer-links a:hover { color: var(--green); }
-  .footer-copy {
-    font-size: 13px;
-    color: var(--text-muted);
-  }
 
-  @media (max-width: 600px) {
-    .hero h1 { font-size: 32px; }
-    .hero { padding: 48px 20px 40px; }
-    .container { padding: 32px 20px 64px; }
-    .section-title { font-size: 22px; }
+  @media (max-width: 720px) {
     .nav-links { gap: 16px; font-size: 13px; }
-    .contact-card { padding: 32px 24px; }
+    .hero { padding: 56px 24px 32px; }
+    .container { padding: 24px 24px 64px; }
+    .contact-card { padding: 36px 24px; }
+    .contact-card h2 { font-size: 22px; }
+    .section-title { font-size: 24px; }
+    .faq-question { padding: 18px 22px; font-size: 15px; }
+    .faq-answer-inner { padding: 0 22px 20px; }
+    .footer-inner { flex-direction: column; gap: 24px; text-align: center; }
   }
 </style>
 </head>
@@ -269,130 +354,119 @@
 
 <header class="hero">
   <div class="hero-inner">
-    <h1>Support</h1>
-    <p class="subtitle">Need help? Find answers below or reach out directly.</p>
+    <div class="hero-eyebrow">Help Center</div>
+    <h1>How can we help?</h1>
+    <p class="hero-sub">Browse common questions below or reach out directly. We read every message.</p>
   </div>
 </header>
 
 <main class="container">
 
 <div class="contact-card">
-  <h2>Contact us</h2>
-  <p>Bug reports, feature requests, or general questions — we read every email.</p>
-  <a href="mailto:es384425@gmail.com" class="contact-button">es384425@gmail.com</a>
-  <p class="response-time">Replies typically within 24–48 hours.</p>
+  <div class="contact-eyebrow">Contact us</div>
+  <h2>Get in touch</h2>
+  <p>Bug reports, feature requests, or general questions — we'd love to hear from you.</p>
+  <a href="mailto:es384425@gmail.com" class="contact-button">Email support</a>
+  <p class="response-time">Replies typically within 24–48 hours</p>
 </div>
 
-<h2 class="section-title">Frequently Asked Questions</h2>
+<div class="section-eyebrow">FAQ</div>
+<h2 class="section-title">Frequently asked questions</h2>
 
 <div class="faq-item">
   <div class="faq-question">How do I add a holding?</div>
   <div class="faq-answer">
-    <div class="faq-answer-inner">
-      From the Holdings tab, tap the <strong>+</strong> button. Enter the ticker symbol, number of shares, cost basis, and purchase date. The app fetches current price and dividend data automatically.
-    </div>
+    <div class="faq-answer-inner">From the Holdings tab, tap the <strong>+</strong> button. Enter the ticker symbol, number of shares, cost basis, and purchase date. The app fetches current price and dividend data automatically.</div>
   </div>
 </div>
 
 <div class="faq-item">
   <div class="faq-question">How accurate are the dividend yields?</div>
   <div class="faq-answer">
-    <div class="faq-answer-inner">
-      Yields are calculated from trailing-12-month dividend payments fetched from public market data. For consistent dividend payers (most blue-chip stocks and ETFs), yields are highly accurate. For variable-distribution funds (covered call ETFs, REITs), yields can fluctuate as recent payment history shifts.
-    </div>
+    <div class="faq-answer-inner">Yields are calculated from trailing-12-month dividend payments fetched from public market data. For consistent dividend payers (most blue-chip stocks and ETFs), yields are highly accurate. For variable-distribution funds (covered call ETFs, REITs), yields can fluctuate as recent payment history shifts.</div>
   </div>
 </div>
 
 <div class="faq-item">
   <div class="faq-question">How do I connect my brokerage account?</div>
   <div class="faq-answer">
-    <div class="faq-answer-inner">
-      Go to Settings → <strong>Broker Sync</strong> → Connect Broker. You'll be redirected to SnapTrade's secure portal where you sign in to your broker. All connections are <strong>read-only</strong> — we cannot trade, transfer, or modify your account in any way.
-    </div>
+    <div class="faq-answer-inner">Go to Settings → <strong>Broker Sync</strong> → Connect Broker. You'll be redirected to SnapTrade's secure portal where you sign in to your broker. All connections are <strong>read-only</strong> — we cannot trade, transfer, or modify your account in any way.</div>
   </div>
 </div>
 
 <div class="faq-item">
   <div class="faq-question">Is my data secure?</div>
   <div class="faq-answer">
-    <div class="faq-answer-inner">
-      Yes. All your portfolio data is stored on your device, optionally synced to your personal iCloud. We don't have user accounts, don't collect personal information, and don't use third-party analytics. See the <a href="privacy.html">Privacy Policy</a> for full details.
-    </div>
+    <div class="faq-answer-inner">Yes. All your portfolio data is stored on your device, optionally synced to your personal iCloud. We don't have user accounts, don't collect personal information, and don't use third-party analytics. See the <a href="privacy.html">Privacy Policy</a> for full details.</div>
   </div>
 </div>
 
 <div class="faq-item">
   <div class="faq-question">What's included in Pro?</div>
   <div class="faq-answer">
-    <div class="faq-answer-inner">
-      Dividend Tracker Pro unlocks unlimited holdings, all themes, broker sync, advanced insights (concentration analysis, blended yield, tax estimates, what-if simulator), and CSV import. Free users can track up to 5 holdings with the default theme.
-    </div>
+    <div class="faq-answer-inner">Dividend Tracker Pro unlocks unlimited holdings, all themes, broker sync, advanced insights (concentration analysis, blended yield, tax estimates, what-if simulator), and CSV import. Free users can track up to 5 holdings with the default theme.</div>
   </div>
 </div>
 
 <div class="faq-item">
   <div class="faq-question">How do I cancel my subscription?</div>
   <div class="faq-answer">
-    <div class="faq-answer-inner">
-      Settings → <strong>Manage Subscription</strong> opens iOS's subscription manager. You can cancel anytime; Pro features remain active until the end of your current billing period. We don't process cancellations directly — Apple handles all subscription management.
-    </div>
+    <div class="faq-answer-inner">Settings → <strong>Manage Subscription</strong> opens iOS's subscription manager. You can cancel anytime; Pro features remain active until the end of your current billing period. We don't process cancellations directly — Apple handles all subscription management.</div>
   </div>
 </div>
 
 <div class="faq-item">
   <div class="faq-question">Can I get a refund?</div>
   <div class="faq-answer">
-    <div class="faq-answer-inner">
-      Refunds are processed by Apple, not by us. Visit <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> to request a refund. Apple typically approves refunds for accidental purchases or technical issues.
-    </div>
+    <div class="faq-answer-inner">Refunds are processed by Apple, not by us. Visit <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> to request a refund. Apple typically approves refunds for accidental purchases or technical issues.</div>
   </div>
 </div>
 
 <div class="faq-item">
   <div class="faq-question">How do I import holdings from a CSV?</div>
   <div class="faq-answer">
-    <div class="faq-answer-inner">
-      Settings → Data → <strong>Import CSV</strong>. The expected columns are: Symbol, Shares, Cost Basis, Purchase Date. A template is shown in the import sheet. You can export from most brokerages — see your broker's "Account Activity" or "Tax Documents" sections.
-    </div>
+    <div class="faq-answer-inner">Settings → Data → <strong>Import CSV</strong>. The expected columns are: Symbol, Shares, Cost Basis, Purchase Date. A template is shown in the import sheet. You can export from most brokerages — see your broker's "Account Activity" or "Tax Documents" sections.</div>
   </div>
 </div>
 
 <div class="faq-item">
   <div class="faq-question">A specific stock is showing wrong dividend data — what should I do?</div>
   <div class="faq-answer">
-    <div class="faq-answer-inner">
-      Dividend data comes from public market sources and can occasionally have errors, especially for newly-listed stocks, recent splits, or special distributions. Pull down on the Holdings tab to refresh. If a specific stock still looks wrong, email us with the ticker and we'll investigate.
-    </div>
+    <div class="faq-answer-inner">Dividend data comes from public market sources and can occasionally have errors, especially for newly-listed stocks, recent splits, or special distributions. Pull down on the Holdings tab to refresh. If a specific stock still looks wrong, email us with the ticker and we'll investigate.</div>
   </div>
 </div>
 
 <div class="faq-item">
   <div class="faq-question">Does the app work offline?</div>
   <div class="faq-answer">
-    <div class="faq-answer-inner">
-      Yes. Your holdings and history are stored locally and viewable offline. Live prices and new dividend data require an internet connection.
-    </div>
+    <div class="faq-answer-inner">Yes. Your holdings and history are stored locally and viewable offline. Live prices and new dividend data require an internet connection.</div>
   </div>
 </div>
 
 <div class="resources">
   <h3>Other resources</h3>
-  <a href="privacy.html">Privacy Policy</a>
-  <a href="https://snaptrade.com/privacy">SnapTrade Privacy</a>
-  <a href="https://reportaproblem.apple.com">Request a refund (Apple)</a>
+  <div class="resources-list">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="https://snaptrade.com/privacy">SnapTrade Privacy</a>
+    <a href="https://reportaproblem.apple.com">Apple Refund Request</a>
+  </div>
 </div>
 
 </main>
 
 <footer class="footer">
   <div class="footer-inner">
+    <a href="index.html" class="footer-brand">
+      <div class="brand-icon">$</div>
+      Dividend Tracker
+    </a>
     <div class="footer-links">
       <a href="index.html">Home</a>
       <a href="privacy.html">Privacy</a>
       <a href="support.html">Support</a>
     </div>
-    <p class="footer-copy">© 2026 Dividend Tracker</p>
   </div>
+  <p class="footer-copy">© 2026 Dividend Tracker. All rights reserved.</p>
 </footer>
 
 <script>

@@ -4,101 +4,128 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy · Dividend Tracker</title>
-<meta name="description" content="Privacy policy for Dividend Tracker — the iOS app for tracking dividend income.">
 <style>
   :root {
-    --green: #0a6e3a;
-    --green-dark: #084c28;
-    --green-light: #e8f5ed;
-    --gold: #c8a037;
-    --bg: #fafafa;
-    --surface: #ffffff;
-    --text: #18181b;
-    --text-muted: #71717a;
-    --border: #e4e4e7;
+    --green-50:  #f0f9f4;
+    --green-100: #dcf2e3;
+    --green-500: #0a6e3a;
+    --green-600: #0a5e32;
+    --green-700: #084c28;
+    --gold:      #c8a037;
+    --gold-light:#e6c773;
+    --bg:        #fafafa;
+    --surface:   #ffffff;
+    --text:      #0a0a0a;
+    --text-2:    #404040;
+    --text-3:    #737373;
+    --border:    #e5e5e5;
+    --shadow:    0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.04);
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", system-ui, sans-serif;
     background: var(--bg);
     color: var(--text);
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
+
   .nav {
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    padding: 16px 24px;
     position: sticky;
     top: 0;
-    z-index: 10;
-    backdrop-filter: blur(12px);
-    background: rgba(255, 255, 255, 0.85);
+    z-index: 100;
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
   }
   .nav-inner {
-    max-width: 880px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 14px 28px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
   }
   .brand {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--text);
     font-weight: 700;
     font-size: 17px;
-    color: var(--text);
-    text-decoration: none;
   }
   .brand-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--gold);
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--green-500), var(--green-700));
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold-light);
     font-weight: 800;
-    font-size: 16px;
+    font-size: 18px;
   }
   .nav-links {
     display: flex;
-    gap: 24px;
-    font-size: 14px;
+    gap: 32px;
+    align-items: center;
   }
   .nav-links a {
-    color: var(--text-muted);
+    color: var(--text-2);
     text-decoration: none;
-    transition: color 0.15s;
+    font-size: 14px;
+    font-weight: 500;
   }
-  .nav-links a:hover { color: var(--green); }
-  .nav-links a.active { color: var(--green); font-weight: 600; }
+  .nav-links a:hover { color: var(--green-500); }
+  .nav-links a.active { color: var(--green-500); }
 
   .hero {
-    background: linear-gradient(180deg, var(--green-light) 0%, transparent 100%);
-    padding: 72px 24px 56px;
+    padding: 80px 28px 48px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
   }
-  .hero-inner { max-width: 720px; margin: 0 auto; }
-  .hero h1 {
-    font-size: 44px;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    margin-bottom: 12px;
-    color: var(--text);
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 500px;
+    background: radial-gradient(ellipse, rgba(10,110,58,0.06) 0%, transparent 65%);
+    pointer-events: none;
   }
-  .hero .subtitle {
-    font-size: 18px;
-    color: var(--text-muted);
-  }
-  .hero .updated {
+  .hero-inner { max-width: 720px; margin: 0 auto; position: relative; }
+  .hero-eyebrow {
     display: inline-block;
-    margin-top: 16px;
+    background: var(--green-100);
+    color: var(--green-700);
+    padding: 6px 14px;
+    border-radius: 999px;
     font-size: 13px;
-    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .hero-sub {
+    font-size: 18px;
+    color: var(--text-3);
+    max-width: 540px;
+    margin: 0 auto 16px;
+  }
+  .updated-pill {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--text-3);
     background: var(--surface);
     padding: 6px 14px;
     border-radius: 999px;
@@ -106,85 +133,136 @@
   }
 
   .container {
-    max-width: 720px;
+    max-width: 760px;
     margin: 0 auto;
-    padding: 48px 24px 96px;
+    padding: 32px 28px 96px;
   }
+
+  .summary-card {
+    background: linear-gradient(135deg, var(--green-700) 0%, var(--green-500) 100%);
+    color: white;
+    padding: 32px;
+    border-radius: 16px;
+    margin-bottom: 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  .summary-card::before {
+    content: "";
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(200,160,55,0.18) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .summary-eyebrow {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.85;
+    margin-bottom: 8px;
+    color: var(--gold-light);
+  }
+  .summary-card h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .summary-card p {
+    color: rgba(255,255,255,0.9);
+    line-height: 1.6;
+  }
+
   .container h2 {
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 56px 0 16px;
     color: var(--text);
-    margin: 48px 0 16px;
-    letter-spacing: -0.01em;
   }
   .container h2:first-of-type { margin-top: 0; }
   .container p {
+    color: var(--text-2);
     margin-bottom: 16px;
-    color: #3f3f46;
+    font-size: 16px;
   }
   .container ul {
-    margin-bottom: 20px;
-    padding-left: 8px;
+    margin-bottom: 24px;
+    list-style: none;
   }
   .container ul li {
-    list-style: none;
     padding-left: 28px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    color: var(--text-2);
     position: relative;
-    color: #3f3f46;
+    font-size: 16px;
   }
   .container ul li::before {
     content: "";
     position: absolute;
-    left: 8px;
+    left: 4px;
     top: 11px;
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    background: var(--green);
+    background: var(--green-500);
   }
-  .container a { color: var(--green); font-weight: 500; }
+  .container a { color: var(--green-500); font-weight: 500; }
+  .container a:hover { text-decoration: underline; }
   .container strong { color: var(--text); font-weight: 600; }
-
-  .callout {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-left: 4px solid var(--green);
-    padding: 20px 24px;
-    border-radius: 8px;
-    margin: 24px 0;
-  }
 
   .footer {
     background: var(--surface);
     border-top: 1px solid var(--border);
-    padding: 40px 24px;
-    text-align: center;
+    padding: 56px 28px 32px;
   }
-  .footer-inner { max-width: 720px; margin: 0 auto; }
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+  }
   .footer-links {
     display: flex;
-    gap: 24px;
-    justify-content: center;
-    margin-bottom: 16px;
-    font-size: 14px;
+    gap: 28px;
   }
   .footer-links a {
-    color: var(--text-muted);
+    color: var(--text-2);
     text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
   }
-  .footer-links a:hover { color: var(--green); }
+  .footer-links a:hover { color: var(--green-500); }
   .footer-copy {
+    max-width: 1100px;
+    margin: 32px auto 0;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--text-3);
     font-size: 13px;
-    color: var(--text-muted);
+    text-align: center;
   }
 
-  @media (max-width: 600px) {
-    .hero h1 { font-size: 32px; }
-    .hero { padding: 48px 20px 40px; }
-    .container { padding: 32px 20px 64px; }
-    .container h2 { font-size: 20px; }
+  @media (max-width: 720px) {
     .nav-links { gap: 16px; font-size: 13px; }
+    .hero { padding: 56px 24px 32px; }
+    .container { padding: 24px 24px 64px; }
+    .summary-card { padding: 24px; }
+    .container h2 { font-size: 20px; }
+    .footer-inner { flex-direction: column; gap: 24px; text-align: center; }
   }
 </style>
 </head>
@@ -206,21 +284,23 @@
 
 <header class="hero">
   <div class="hero-inner">
-    <h1>Privacy Policy</h1>
-    <p class="subtitle">We don't track you. We don't sell your data. We don't have user accounts.</p>
-    <span class="updated">Last updated: May 7, 2026</span>
+    <div class="hero-eyebrow">Privacy Policy</div>
+    <h1>Your data stays<br>on your device.</h1>
+    <p class="hero-sub">No accounts. No tracking. No analytics. We built Dividend Tracker the way we'd want a finance app to be built.</p>
+    <div class="updated-pill">Last updated: May 7, 2026</div>
   </div>
 </header>
 
 <main class="container">
 
-<h2>The short version</h2>
-<div class="callout">
-  Dividend Tracker stores your portfolio data locally on your device. We don't collect personal information, don't use third-party analytics, and don't share data with advertisers. There are no user accounts to create.
+<div class="summary-card">
+  <div class="summary-eyebrow">In Plain English</div>
+  <h2>The short version</h2>
+  <p>Dividend Tracker stores your portfolio data locally on your device. We don't collect personal information, don't use third-party analytics, and don't share data with advertisers. There are no user accounts to create.</p>
 </div>
 
-<h2>Data the app collects</h2>
-<p>Dividend Tracker collects only what's needed to function:</p>
+<h2>What the app collects</h2>
+<p>Dividend Tracker collects only what's required for the app to function:</p>
 <ul>
   <li><strong>Holdings data</strong> — ticker symbols, shares, cost basis, purchase dates entered manually by you. Stored locally on your device. Optionally synced via Apple iCloud if iCloud is enabled in iOS settings.</li>
   <li><strong>Goals and preferences</strong> — income targets, theme selection, notification preferences. Stored locally on your device.</li>
@@ -228,10 +308,10 @@
   <li><strong>Apple subscription receipts</strong> — handled entirely by Apple's StoreKit. We never see your payment details, Apple ID, or billing address.</li>
 </ul>
 
-<h2>Data the app does NOT collect</h2>
+<h2>What the app does not collect</h2>
 <ul>
   <li>No name, email, phone number, or address</li>
-  <li>No third-party analytics (no Google Analytics, no Firebase Analytics, no Segment, no Mixpanel)</li>
+  <li>No third-party analytics — no Google Analytics, Firebase Analytics, Segment, or Mixpanel</li>
   <li>No cross-app or cross-website tracking</li>
   <li>No advertising identifiers</li>
   <li>No data sold, rented, or shared with advertisers</li>
@@ -280,13 +360,17 @@
 
 <footer class="footer">
   <div class="footer-inner">
+    <a href="index.html" class="footer-brand">
+      <div class="brand-icon">$</div>
+      Dividend Tracker
+    </a>
     <div class="footer-links">
       <a href="index.html">Home</a>
       <a href="privacy.html">Privacy</a>
       <a href="support.html">Support</a>
     </div>
-    <p class="footer-copy">© 2026 Dividend Tracker</p>
   </div>
+  <p class="footer-copy">© 2026 Dividend Tracker. All rights reserved.</p>
 </footer>
 
 </body>
