@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy · Dividend Tracker</title>
+<meta name="description" content="Privacy policy for Dividend Tracker — the iOS app for tracking dividend income.">
+<style>
+  :root {
+    --green: #0a6e3a;
+    --green-dark: #084c28;
+    --green-light: #e8f5ed;
+    --gold: #c8a037;
+    --bg: #fafafa;
+    --surface: #ffffff;
+    --text: #18181b;
+    --text-muted: #71717a;
+    --border: #e4e4e7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .nav {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.85);
+  }
+  .nav-inner {
+    max-width: 880px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .brand-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-weight: 800;
+    font-size: 16px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 24px;
+    font-size: 14px;
+  }
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .nav-links a:hover { color: var(--green); }
+  .nav-links a.active { color: var(--green); font-weight: 600; }
+
+  .hero {
+    background: linear-gradient(180deg, var(--green-light) 0%, transparent 100%);
+    padding: 72px 24px 56px;
+    text-align: center;
+  }
+  .hero-inner { max-width: 720px; margin: 0 auto; }
+  .hero h1 {
+    font-size: 44px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+    color: var(--text);
+  }
+  .hero .subtitle {
+    font-size: 18px;
+    color: var(--text-muted);
+  }
+  .hero .updated {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--text-muted);
+    background: var(--surface);
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+  }
+  .container h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 48px 0 16px;
+    letter-spacing: -0.01em;
+  }
+  .container h2:first-of-type { margin-top: 0; }
+  .container p {
+    margin-bottom: 16px;
+    color: #3f3f46;
+  }
+  .container ul {
+    margin-bottom: 20px;
+    padding-left: 8px;
+  }
+  .container ul li {
+    list-style: none;
+    padding-left: 28px;
+    margin-bottom: 10px;
+    position: relative;
+    color: #3f3f46;
+  }
+  .container ul li::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 11px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+  }
+  .container a { color: var(--green); font-weight: 500; }
+  .container strong { color: var(--text); font-weight: 600; }
+
+  .callout {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--green);
+    padding: 20px 24px;
+    border-radius: 8px;
+    margin: 24px 0;
+  }
+
+  .footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 40px 24px;
+    text-align: center;
+  }
+  .footer-inner { max-width: 720px; margin: 0 auto; }
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+  .footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .footer-links a:hover { color: var(--green); }
+  .footer-copy {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 32px; }
+    .hero { padding: 48px 20px 40px; }
+    .container { padding: 32px 20px 64px; }
+    .container h2 { font-size: 20px; }
+    .nav-links { gap: 16px; font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <div class="brand-icon">$</div>
+      Dividend Tracker
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html" class="active">Privacy</a>
+      <a href="support.html">Support</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1>Privacy Policy</h1>
+    <p class="subtitle">We don't track you. We don't sell your data. We don't have user accounts.</p>
+    <span class="updated">Last updated: May 7, 2026</span>
+  </div>
+</header>
+
+<main class="container">
+
+<h2>The short version</h2>
+<div class="callout">
+  Dividend Tracker stores your portfolio data locally on your device. We don't collect personal information, don't use third-party analytics, and don't share data with advertisers. There are no user accounts to create.
+</div>
+
+<h2>Data the app collects</h2>
+<p>Dividend Tracker collects only what's needed to function:</p>
+<ul>
+  <li><strong>Holdings data</strong> — ticker symbols, shares, cost basis, purchase dates entered manually by you. Stored locally on your device. Optionally synced via Apple iCloud if iCloud is enabled in iOS settings.</li>
+  <li><strong>Goals and preferences</strong> — income targets, theme selection, notification preferences. Stored locally on your device.</li>
+  <li><strong>Brokerage connection metadata</strong> — read-only access tokens stored securely in the iOS Keychain when you choose to connect a broker. See "Brokerage Connections" below.</li>
+  <li><strong>Apple subscription receipts</strong> — handled entirely by Apple's StoreKit. We never see your payment details, Apple ID, or billing address.</li>
+</ul>
+
+<h2>Data the app does NOT collect</h2>
+<ul>
+  <li>No name, email, phone number, or address</li>
+  <li>No third-party analytics (no Google Analytics, no Firebase Analytics, no Segment, no Mixpanel)</li>
+  <li>No cross-app or cross-website tracking</li>
+  <li>No advertising identifiers</li>
+  <li>No data sold, rented, or shared with advertisers</li>
+  <li>No user accounts, sign-up flows, or login</li>
+</ul>
+
+<h2>Market data</h2>
+<p>Stock prices and dividend information are fetched from Finnhub through an anonymous proxy server. Each request contains only the ticker symbols requested (such as "VOO" or "QQQI"). These queries are not associated with any user identifier — Finnhub has no way to identify which user made a query.</p>
+
+<h2>Brokerage connections (optional)</h2>
+<p>If you choose to connect a brokerage account, the connection is handled through SnapTrade — a regulated third-party service that aggregates broker data feeds. The app:</p>
+<ul>
+  <li>Receives only <strong>read-only</strong> access to your account holdings and transactions</li>
+  <li>Cannot place trades, transfer money, or modify your account in any way</li>
+  <li>Stores the connection token securely in the iOS Keychain on your device only</li>
+  <li>Never sees your broker username or password — these are entered directly into SnapTrade's secure portal</li>
+</ul>
+<p>You can disconnect your broker at any time from the Settings tab. SnapTrade's privacy practices are documented at <a href="https://snaptrade.com/privacy">snaptrade.com/privacy</a>.</p>
+
+<h2>Subscriptions and payments</h2>
+<p>Dividend Tracker offers optional Pro subscriptions via Apple's In-App Purchase system. All payment processing is handled by Apple. The app receives only:</p>
+<ul>
+  <li>Subscription status (active, expired, trial)</li>
+  <li>Anonymous receipt validation tokens used to verify purchases</li>
+</ul>
+<p>The app never sees your credit card number, Apple ID, or billing address.</p>
+
+<h2>Children's privacy</h2>
+<p>Dividend Tracker is not directed at children under 13. The app does not knowingly collect data from children. If you believe a child has used the app, no action is required — the app stores no personal data about any user.</p>
+
+<h2>Data retention and deletion</h2>
+<p>All your data is stored locally on your device. To delete it:</p>
+<ul>
+  <li>Delete the app from your iPhone — all local data is removed</li>
+  <li>Disable iCloud sync in iOS Settings if you have iCloud-synced copies</li>
+  <li>Disconnect your broker connection in Settings → Broker Sync</li>
+</ul>
+
+<h2>Changes to this policy</h2>
+<p>We may update this policy as the app evolves. Changes will be posted here with an updated "Last updated" date. Significant changes will also be announced in-app.</p>
+
+<h2>Contact</h2>
+<p>Questions about privacy? Email <a href="mailto:es384425@gmail.com">es384425@gmail.com</a>.</p>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+    </div>
+    <p class="footer-copy">© 2026 Dividend Tracker</p>
+  </div>
+</footer>
+
+</body>
+</html>
