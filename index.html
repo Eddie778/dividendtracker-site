@@ -28,7 +28,7 @@
   --serif: 'Instrument Serif', Georgia, serif;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 80px; }
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   background: var(--bg);
@@ -70,7 +70,6 @@ body {
   filter: blur(80px);
 }
 
-/* === Noise overlay === */
 .noise {
   position: fixed;
   inset: 0;
@@ -80,7 +79,6 @@ body {
   background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
 }
 
-/* === Navigation === */
 .nav {
   position: sticky;
   top: 0;
@@ -112,16 +110,11 @@ body {
   width: 32px;
   height: 32px;
   border-radius: 9px;
-  background:
-    linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%),
-    linear-gradient(135deg, var(--green-deep), var(--green));
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%), linear-gradient(135deg, var(--green-deep), var(--green));
   display: grid;
   place-items: center;
   position: relative;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.2),
-    inset 0 -2px 0 rgba(0,0,0,0.2),
-    0 4px 12px rgba(16,185,129,0.25);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0,0,0,0.2), 0 4px 12px rgba(16,185,129,0.25);
 }
 .brand-mark::after {
   content: "$";
@@ -133,11 +126,7 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.nav-links {
-  display: flex;
-  gap: 36px;
-  align-items: center;
-}
+.nav-links { display: flex; gap: 36px; align-items: center; }
 .nav-links a {
   color: var(--text-2);
   text-decoration: none;
@@ -161,21 +150,9 @@ body {
   box-shadow: 0 0 0 1px rgba(255,255,255,0.12), 0 6px 24px rgba(16,185,129,0.45);
 }
 
-/* === Layout === */
-.section {
-  position: relative;
-  z-index: 2;
-}
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 32px;
-}
-.container-narrow {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 0 32px;
-}
+.section { position: relative; z-index: 2; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+.container-narrow { max-width: 760px; margin: 0 auto; padding: 0 32px; }
 
 /* === Hero === */
 .hero {
@@ -258,17 +235,11 @@ body {
 .btn-primary {
   background: linear-gradient(135deg, var(--green), var(--green-bright));
   color: var(--bg);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.25),
-    0 0 0 1px rgba(255,255,255,0.06),
-    0 8px 24px rgba(16,185,129,0.3);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 0 0 1px rgba(255,255,255,0.06), 0 8px 24px rgba(16,185,129,0.3);
 }
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.3),
-    0 0 0 1px rgba(255,255,255,0.1),
-    0 12px 32px rgba(16,185,129,0.45);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 0 0 1px rgba(255,255,255,0.1), 0 12px 32px rgba(16,185,129,0.45);
 }
 .btn-ghost {
   background: rgba(255,255,255,0.05);
@@ -280,22 +251,14 @@ body {
   border-color: var(--border-strong);
 }
 
-/* === Hero device mockup === */
-.hero-device {
-  margin: 80px auto 0;
-  max-width: 360px;
-  position: relative;
-}
+/* Device mockup */
+.hero-device { margin: 80px auto 0; max-width: 360px; position: relative; }
 .device-frame {
   background: linear-gradient(180deg, #1f1f1f 0%, #0a0a0a 100%);
   border-radius: 48px;
   padding: 12px;
   border: 1px solid var(--border-strong);
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,0.04),
-    0 60px 140px rgba(0,0,0,0.6),
-    0 24px 60px rgba(16,185,129,0.15);
-  position: relative;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.04), 0 60px 140px rgba(0,0,0,0.6), 0 24px 60px rgba(16,185,129,0.15);
 }
 .device-screen {
   background: var(--bg-2);
@@ -304,364 +267,139 @@ body {
   overflow: hidden;
   position: relative;
 }
-.device-content {
-  padding: 28px 20px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.device-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 8px;
-}
-.device-greeting {
-  font-size: 11px;
-  color: var(--text-3);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 600;
-}
-.device-portfolio {
-  font-family: var(--serif);
-  font-size: 38px;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  color: var(--text);
-}
-.device-portfolio-meta {
-  font-size: 11px;
-  color: var(--green-bright);
-  font-weight: 600;
-  margin-top: 4px;
-}
-.device-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 14px 16px;
-}
-.device-card-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.device-ticker {
-  font-weight: 600;
-  font-size: 13px;
-  letter-spacing: -0.01em;
-}
-.device-yield {
-  font-size: 11px;
-  color: var(--text-3);
-  margin-top: 2px;
-}
-.device-amount {
-  font-weight: 600;
-  font-size: 13px;
-  color: var(--green-bright);
-}
-.device-chart {
-  flex: 1;
-  background: linear-gradient(180deg, rgba(16,185,129,0.15), transparent);
-  border-radius: 14px;
-  position: relative;
-  overflow: hidden;
-}
-.device-chart svg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
+.device-content { padding: 28px 20px; height: 100%; display: flex; flex-direction: column; gap: 16px; }
+.device-greeting { font-size: 11px; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+.device-portfolio { font-family: var(--serif); font-size: 38px; line-height: 1; letter-spacing: -0.02em; color: var(--text); }
+.device-portfolio-meta { font-size: 11px; color: var(--green-bright); font-weight: 600; margin-top: 4px; }
+.device-card { background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 16px; padding: 14px 16px; }
+.device-card-row { display: flex; justify-content: space-between; align-items: center; }
+.device-ticker { font-weight: 600; font-size: 13px; letter-spacing: -0.01em; }
+.device-yield { font-size: 11px; color: var(--text-3); margin-top: 2px; }
+.device-amount { font-weight: 600; font-size: 13px; color: var(--green-bright); }
+.device-chart { flex: 1; background: linear-gradient(180deg, rgba(16,185,129,0.15), transparent); border-radius: 14px; position: relative; overflow: hidden; }
+.device-chart svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 
-/* === Stats === */
-.stats {
-  padding: 64px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  background: rgba(255,255,255,0.015);
-}
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-}
-.stat {
-  text-align: center;
-  padding: 0 24px;
-  border-left: 1px solid var(--border);
-}
+/* Stats */
+.stats { padding: 64px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: rgba(255,255,255,0.015); }
+.stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+.stat { text-align: center; padding: 0 24px; border-left: 1px solid var(--border); }
 .stat:first-child { border-left: none; }
-.stat-value {
-  font-family: var(--serif);
-  font-size: clamp(48px, 6vw, 64px);
-  line-height: 1;
-  letter-spacing: -0.03em;
-  background: linear-gradient(135deg, var(--text) 30%, var(--text-3) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 8px;
-}
-.stat-label {
-  font-size: 12.5px;
-  color: var(--text-3);
-  font-weight: 500;
-  letter-spacing: -0.005em;
-}
+.stat-value { font-family: var(--serif); font-size: clamp(48px, 6vw, 64px); line-height: 1; letter-spacing: -0.03em; background: linear-gradient(135deg, var(--text) 30%, var(--text-3) 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+.stat-label { font-size: 12.5px; color: var(--text-3); font-weight: 500; letter-spacing: -0.005em; }
 
-/* === Features === */
-.features {
-  padding: 140px 0;
-}
-.section-header {
-  text-align: center;
-  margin-bottom: 80px;
-}
-.section-eyebrow {
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--green-bright);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 16px;
-}
-.section-title {
-  font-size: clamp(32px, 4.5vw, 56px);
-  font-weight: 700;
-  letter-spacing: -0.035em;
-  line-height: 1.05;
-  max-width: 720px;
-  margin: 0 auto;
-}
-.section-title em {
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 400;
-  color: var(--text-2);
-}
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
-}
-.feature-card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  padding: 36px 32px 32px;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.feature-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top right, rgba(16,185,129,0.08), transparent 60%);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-.feature-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--border-strong);
-  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-}
+/* Section pattern */
+.section-block { padding: 140px 0; }
+.section-header { text-align: center; margin-bottom: 80px; }
+.section-eyebrow { font-size: 12.5px; font-weight: 600; color: var(--green-bright); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
+.section-title { font-size: clamp(32px, 4.5vw, 56px); font-weight: 700; letter-spacing: -0.035em; line-height: 1.05; max-width: 720px; margin: 0 auto 16px; }
+.section-title em { font-family: var(--serif); font-style: italic; font-weight: 400; background: linear-gradient(135deg, var(--green-bright), var(--gold-light)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.section-sub { color: var(--text-2); font-size: 17px; max-width: 540px; margin: 0 auto; }
+
+/* Features grid */
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.feature-card { background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); border: 1px solid var(--border); border-radius: 24px; padding: 36px 32px 32px; position: relative; overflow: hidden; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+.feature-card::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at top right, rgba(16,185,129,0.08), transparent 60%); opacity: 0; transition: opacity 0.3s; }
+.feature-card:hover { transform: translateY(-4px); border-color: var(--border-strong); background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)); }
 .feature-card:hover::before { opacity: 1; }
-.feature-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: rgba(16,185,129,0.1);
-  border: 1px solid rgba(16,185,129,0.2);
-  display: grid;
-  place-items: center;
-  margin-bottom: 24px;
-  color: var(--green-bright);
-  font-size: 20px;
-  position: relative;
-}
-.feature-card h3 {
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: -0.015em;
-  margin-bottom: 10px;
-  position: relative;
-}
-.feature-card p {
-  color: var(--text-2);
-  font-size: 14.5px;
-  line-height: 1.6;
-  position: relative;
-}
+.feature-icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2); display: grid; place-items: center; margin-bottom: 24px; color: var(--green-bright); font-size: 20px; position: relative; }
+.feature-card h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.015em; margin-bottom: 10px; position: relative; }
+.feature-card p { color: var(--text-2); font-size: 14.5px; line-height: 1.6; position: relative; }
 
-/* === Quote section === */
-.quote-section {
-  padding: 120px 0;
-  text-align: center;
+/* === Privacy section === */
+.privacy-content { max-width: 760px; margin: 0 auto; }
+.summary-card {
+  background: linear-gradient(135deg, rgba(16,185,129,0.1) 0%, rgba(16,185,129,0.02) 100%);
+  border: 1px solid rgba(16,185,129,0.2); border-radius: 20px;
+  padding: 32px; margin-bottom: 56px; position: relative; overflow: hidden;
 }
-.quote {
-  font-family: var(--serif);
-  font-size: clamp(28px, 4vw, 44px);
-  line-height: 1.25;
-  letter-spacing: -0.02em;
-  color: var(--text);
-  max-width: 760px;
-  margin: 0 auto 28px;
-  font-weight: 400;
-}
-.quote em {
-  background: linear-gradient(135deg, var(--green-bright), var(--gold-light));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+.summary-card::before { content: ""; position: absolute; top: -100px; right: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 60%); filter: blur(20px); }
+.summary-eyebrow { font-size: 12px; font-weight: 600; color: var(--green-bright); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; position: relative; }
+.summary-card h3 { font-family: var(--serif); font-size: 26px; font-weight: 400; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 12px; position: relative; }
+.summary-card p { color: var(--text-2); font-size: 15.5px; line-height: 1.6; position: relative; }
+.privacy-content h3 { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; margin: 48px 0 16px; }
+.privacy-content h3:first-of-type { margin-top: 0; }
+.privacy-content p { color: var(--text-2); margin-bottom: 16px; font-size: 15.5px; line-height: 1.65; }
+.privacy-content ul { margin-bottom: 24px; list-style: none; }
+.privacy-content ul li { padding-left: 24px; margin-bottom: 12px; color: var(--text-2); position: relative; font-size: 15.5px; line-height: 1.65; }
+.privacy-content ul li::before { content: ""; position: absolute; left: 4px; top: 10px; width: 6px; height: 6px; border-radius: 50%; background: var(--green-bright); }
+.privacy-content a { color: var(--green-bright); text-decoration: none; font-weight: 500; }
+.privacy-content a:hover { color: var(--text); }
+.privacy-content strong { color: var(--text); font-weight: 600; }
+.updated-pill { display: inline-block; margin-bottom: 32px; font-size: 12.5px; color: var(--text-3); background: rgba(255,255,255,0.04); padding: 6px 14px; border-radius: 999px; border: 1px solid var(--border); }
 
-/* === Big CTA === */
-.cta-section {
-  padding: 80px 0 140px;
-}
-.cta-card {
+/* === Support section === */
+.support-content { max-width: 760px; margin: 0 auto; }
+.contact-card {
   background: linear-gradient(135deg, #0d2c1f 0%, #051a10 100%);
-  border: 1px solid rgba(16,185,129,0.2);
-  border-radius: 32px;
-  padding: 80px 48px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+  border: 1px solid rgba(16,185,129,0.25); border-radius: 24px;
+  padding: 56px 40px; text-align: center;
+  position: relative; overflow: hidden; margin-bottom: 64px;
 }
-.cta-card::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, rgba(16,185,129,0.2) 0%, transparent 50%);
-  filter: blur(40px);
-}
-.cta-card::after {
-  content: "";
-  position: absolute;
-  bottom: -100px;
-  right: -100px;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, transparent 60%);
-  filter: blur(40px);
-}
-.cta-card h2 {
-  font-size: clamp(32px, 5vw, 56px);
-  font-weight: 700;
-  letter-spacing: -0.035em;
-  line-height: 1.05;
-  max-width: 600px;
-  margin: 0 auto 20px;
-  position: relative;
-}
-.cta-card h2 em {
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 400;
-  background: linear-gradient(135deg, var(--green-bright), var(--gold-light));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.cta-card p {
-  color: var(--text-2);
-  font-size: 17px;
-  max-width: 480px;
-  margin: 0 auto 32px;
-  position: relative;
-}
+.contact-card::before { content: ""; position: absolute; top: -50%; left: 50%; transform: translateX(-50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(16,185,129,0.2) 0%, transparent 50%); filter: blur(40px); }
+.contact-card::after { content: ""; position: absolute; bottom: -100px; right: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(212,175,55,0.12) 0%, transparent 60%); filter: blur(40px); }
+.contact-eyebrow { font-size: 12px; font-weight: 600; color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; position: relative; }
+.contact-card h3 { font-size: clamp(26px, 3.5vw, 36px); font-weight: 700; letter-spacing: -0.025em; line-height: 1.1; margin-bottom: 14px; position: relative; }
+.contact-card h3 em { font-family: var(--serif); font-style: italic; font-weight: 400; background: linear-gradient(135deg, var(--green-bright), var(--gold-light)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.contact-card p { color: var(--text-2); margin-bottom: 28px; font-size: 16px; position: relative; }
+.response-time { margin-top: 16px; font-size: 13px; color: var(--text-3); position: relative; }
+
+.faq-title { font-size: clamp(26px, 3.5vw, 36px); font-weight: 700; letter-spacing: -0.025em; margin-bottom: 32px; }
+.faq-title em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--text-2); }
+.faq-item { background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 10px; overflow: hidden; transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); }
+.faq-item:hover { border-color: var(--border-strong); background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)); }
+.faq-item.open { border-color: rgba(16,185,129,0.3); background: linear-gradient(180deg, rgba(16,185,129,0.04), rgba(16,185,129,0.01)); }
+.faq-question { padding: 22px 28px; font-weight: 500; font-size: 15.5px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--text); user-select: none; }
+.faq-question::after { content: ""; width: 12px; height: 12px; border-right: 1.5px solid var(--text-3); border-bottom: 1.5px solid var(--text-3); transform: rotate(45deg); transition: transform 0.25s, border-color 0.2s; margin-left: 16px; flex-shrink: 0; }
+.faq-item.open .faq-question::after { transform: rotate(-135deg); border-color: var(--green-bright); }
+.faq-item:hover .faq-question::after { border-color: var(--text); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+.faq-answer-inner { padding: 0 28px 24px; color: var(--text-2); font-size: 14.5px; line-height: 1.65; }
+.faq-item.open .faq-answer { max-height: 500px; }
+.faq-answer a { color: var(--green-bright); font-weight: 500; }
+.faq-answer strong { color: var(--text); font-weight: 600; }
+
+.resources { margin-top: 56px; padding: 24px 28px; background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); border: 1px solid var(--border); border-radius: 16px; }
+.resources h4 { font-size: 13px; font-weight: 600; margin-bottom: 14px; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.08em; }
+.resources-list { display: flex; gap: 24px; flex-wrap: wrap; }
+.resources a { color: var(--green-bright); text-decoration: none; font-size: 14.5px; font-weight: 500; }
+.resources a:hover { color: var(--text); }
+
+/* CTA */
+.cta-card { background: linear-gradient(135deg, #0d2c1f 0%, #051a10 100%); border: 1px solid rgba(16,185,129,0.2); border-radius: 32px; padding: 80px 48px; text-align: center; position: relative; overflow: hidden; }
+.cta-card::before { content: ""; position: absolute; top: -50%; left: 50%; transform: translateX(-50%); width: 800px; height: 800px; background: radial-gradient(circle, rgba(16,185,129,0.2) 0%, transparent 50%); filter: blur(40px); }
+.cta-card h2 { font-size: clamp(32px, 5vw, 56px); font-weight: 700; letter-spacing: -0.035em; line-height: 1.05; max-width: 600px; margin: 0 auto 20px; position: relative; }
+.cta-card h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; background: linear-gradient(135deg, var(--green-bright), var(--gold-light)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.cta-card p { color: var(--text-2); font-size: 17px; max-width: 480px; margin: 0 auto 32px; position: relative; }
 .cta-card .btn { position: relative; }
 
-/* === Footer === */
-.footer {
-  border-top: 1px solid var(--border);
-  padding: 64px 0 40px;
-  background: var(--bg-2);
-  position: relative;
-  z-index: 2;
-}
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 32px;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 48px;
-  align-items: start;
-}
-.footer-tagline {
-  color: var(--text-3);
-  font-size: 13.5px;
-  margin-top: 12px;
-  max-width: 320px;
-  line-height: 1.55;
-}
-.footer-cols {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(120px, auto));
-  gap: 48px;
-}
-.footer-col-title {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text-3);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 16px;
-}
-.footer-col a {
-  display: block;
-  color: var(--text-2);
-  text-decoration: none;
-  font-size: 14px;
-  margin-bottom: 10px;
-  transition: color 0.2s;
-}
+/* Footer */
+.footer { border-top: 1px solid var(--border); padding: 64px 0 40px; background: var(--bg-2); position: relative; z-index: 2; }
+.footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: start; }
+.footer-tagline { color: var(--text-3); font-size: 13.5px; margin-top: 12px; max-width: 320px; line-height: 1.55; }
+.footer-cols { display: grid; grid-template-columns: repeat(2, minmax(120px, auto)); gap: 48px; }
+.footer-col-title { font-size: 12px; font-weight: 600; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; }
+.footer-col a { display: block; color: var(--text-2); text-decoration: none; font-size: 14px; margin-bottom: 10px; transition: color 0.2s; }
 .footer-col a:hover { color: var(--text); }
-.footer-bottom {
-  max-width: 1200px;
-  margin: 64px auto 0;
-  padding: 24px 32px 0;
-  border-top: 1px solid var(--border);
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  font-size: 12.5px;
-  color: var(--text-4);
-}
+.footer-bottom { max-width: 1200px; margin: 64px auto 0; padding: 24px 32px 0; border-top: 1px solid var(--border); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 12.5px; color: var(--text-4); }
 
 @media (max-width: 720px) {
-  .nav-inner { padding: 14px 20px; }
-  .nav-links { gap: 14px; }
+  .nav-inner { padding: 14px 20px; } .nav-links { gap: 14px; }
   .nav-links a:not(.nav-cta) { font-size: 13px; }
   .container, .container-narrow { padding: 0 20px; }
-  .hero { padding: 64px 0 56px; }
-  .hero h1 { font-size: 44px; letter-spacing: -0.035em; }
+  .hero { padding: 64px 0 56px; } .hero h1 { font-size: 44px; letter-spacing: -0.035em; }
   .hero-sub { font-size: 16px; margin-bottom: 32px; }
   .hero-cta-row { flex-direction: column; width: 100%; }
   .btn { width: 100%; justify-content: center; }
   .hero-device { margin-top: 56px; max-width: 280px; }
-  .stats { padding: 40px 0; }
-  .stats-grid { grid-template-columns: 1fr; }
+  .stats { padding: 40px 0; } .stats-grid { grid-template-columns: 1fr; }
   .stat { padding: 24px 0; border-left: none; border-top: 1px solid var(--border); }
   .stat:first-child { border-top: none; padding-top: 0; }
   .stat:last-child { padding-bottom: 0; }
-  .features { padding: 80px 0; }
+  .section-block { padding: 80px 0; }
   .section-header { margin-bottom: 48px; }
   .features-grid { grid-template-columns: 1fr; }
   .feature-card { padding: 28px 24px; }
-  .quote-section { padding: 80px 0; }
-  .cta-section { padding: 40px 0 80px; }
+  .summary-card, .contact-card { padding: 32px 24px; }
   .cta-card { padding: 56px 28px; border-radius: 24px; }
   .footer-inner { grid-template-columns: 1fr; gap: 40px; }
   .footer-cols { gap: 32px; }
@@ -676,19 +414,19 @@ body {
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="brand">
+    <a href="#top" class="brand">
       <span class="brand-mark"></span>
       Dividend Tracker
     </a>
     <div class="nav-links">
-      <a href="privacy.html">Privacy</a>
-      <a href="support.html">Support</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#support">Support</a>
       <a href="#download" class="nav-cta">Get the app</a>
     </div>
   </div>
 </nav>
 
-<section class="section hero">
+<section class="section hero" id="top">
   <div class="container">
     <div class="eyebrow">
       <span class="eyebrow-dot"></span>
@@ -708,12 +446,10 @@ body {
       <div class="device-frame">
         <div class="device-screen">
           <div class="device-content">
-            <div class="device-header">
-              <div>
-                <div class="device-greeting">Annual income</div>
-                <div class="device-portfolio">$12,847</div>
-                <div class="device-portfolio-meta">+ $342 this month</div>
-              </div>
+            <div>
+              <div class="device-greeting">Annual income</div>
+              <div class="device-portfolio">$12,847</div>
+              <div class="device-portfolio-meta">+ $342 this month</div>
             </div>
             <div class="device-card">
               <div class="device-card-row">
@@ -771,11 +507,11 @@ body {
   </div>
 </section>
 
-<section class="section features" id="features">
+<section class="section section-block" id="features">
   <div class="container">
     <div class="section-header">
       <div class="section-eyebrow">What's inside</div>
-      <h2 class="section-title">Everything you need to grow your dividend income, <em>nothing you don't.</em></h2>
+      <h2 class="section-title">Everything you need, <em>nothing you don't.</em></h2>
     </div>
     <div class="features-grid">
       <div class="feature-card">
@@ -812,13 +548,171 @@ body {
   </div>
 </section>
 
-<section class="section quote-section">
-  <div class="container-narrow">
-    <p class="quote">Built for the people who actually <em>read</em> their dividend statements.</p>
+<!-- ============== PRIVACY POLICY SECTION ============== -->
+<section class="section section-block" id="privacy">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Privacy Policy</div>
+      <h2 class="section-title">Your data stays<br><em>on your device.</em></h2>
+      <p class="section-sub">No accounts. No tracking. No analytics. Built the way a finance app should be built.</p>
+    </div>
+
+    <div class="privacy-content">
+      <div class="updated-pill">Last updated: May 7, 2026</div>
+
+      <div class="summary-card">
+        <div class="summary-eyebrow">In Plain English</div>
+        <h3>The short version</h3>
+        <p>Dividend Tracker stores your portfolio data locally on your device. We don't collect personal information, don't use third-party analytics, and don't share data with advertisers. There are no user accounts to create.</p>
+      </div>
+
+      <h3>What the app collects</h3>
+      <p>Dividend Tracker collects only what's required for the app to function:</p>
+      <ul>
+        <li><strong>Holdings data</strong> — ticker symbols, shares, cost basis, purchase dates entered manually by you. Stored locally on your device. Optionally synced via Apple iCloud if iCloud is enabled in iOS settings.</li>
+        <li><strong>Goals and preferences</strong> — income targets, theme selection, notification preferences. Stored locally.</li>
+        <li><strong>Brokerage connection metadata</strong> — read-only access tokens stored securely in the iOS Keychain when you choose to connect a broker.</li>
+        <li><strong>Apple subscription receipts</strong> — handled entirely by Apple's StoreKit. We never see your payment details.</li>
+      </ul>
+
+      <h3>What the app does not collect</h3>
+      <ul>
+        <li>No name, email, phone number, or address</li>
+        <li>No third-party analytics — no Google Analytics, Firebase Analytics, Segment, or Mixpanel</li>
+        <li>No cross-app or cross-website tracking</li>
+        <li>No advertising identifiers</li>
+        <li>No data sold, rented, or shared with advertisers</li>
+        <li>No user accounts, sign-up flows, or login</li>
+      </ul>
+
+      <h3>Market data</h3>
+      <p>Stock prices and dividend information are fetched from Finnhub through an anonymous proxy server. Each request contains only the ticker symbols requested (such as "VOO" or "QQQI"). These queries are not associated with any user identifier.</p>
+
+      <h3>Brokerage connections (optional)</h3>
+      <p>If you choose to connect a brokerage account, the connection is handled through SnapTrade — a regulated third-party service. The app:</p>
+      <ul>
+        <li>Receives only <strong>read-only</strong> access to your account holdings and transactions</li>
+        <li>Cannot place trades, transfer money, or modify your account in any way</li>
+        <li>Stores the connection token securely in the iOS Keychain on your device only</li>
+        <li>Never sees your broker username or password — these are entered directly into SnapTrade's secure portal</li>
+      </ul>
+      <p>Disconnect at any time from the Settings tab. SnapTrade's privacy practices: <a href="https://snaptrade.com/privacy">snaptrade.com/privacy</a></p>
+
+      <h3>Subscriptions and payments</h3>
+      <p>Pro subscriptions are processed via Apple's In-App Purchase system. The app receives:</p>
+      <ul>
+        <li>Subscription status (active, expired, trial)</li>
+        <li>Anonymous receipt validation tokens used to verify purchases</li>
+      </ul>
+      <p>The app never sees your credit card number, Apple ID, or billing address.</p>
+
+      <h3>Children's privacy</h3>
+      <p>Dividend Tracker is not directed at children under 13. The app does not knowingly collect data from children.</p>
+
+      <h3>Data retention and deletion</h3>
+      <p>All your data is stored locally on your device. To delete it:</p>
+      <ul>
+        <li>Delete the app from your iPhone — all local data is removed</li>
+        <li>Disable iCloud sync in iOS Settings if iCloud-synced</li>
+        <li>Disconnect your broker connection in Settings → Broker Sync</li>
+      </ul>
+
+      <h3>Changes to this policy</h3>
+      <p>We may update this policy as the app evolves. Changes will be posted here with an updated date.</p>
+
+      <h3>Contact</h3>
+      <p>Questions about privacy? Email <a href="mailto:es384425@gmail.com">es384425@gmail.com</a>.</p>
+    </div>
   </div>
 </section>
 
-<section class="section cta-section" id="download">
+<!-- ============== SUPPORT SECTION ============== -->
+<section class="section section-block" id="support">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Help Center</div>
+      <h2 class="section-title">How can we<br><em>help?</em></h2>
+      <p class="section-sub">Browse common questions below or reach out directly. We read every message.</p>
+    </div>
+
+    <div class="support-content">
+
+      <div class="contact-card">
+        <div class="contact-eyebrow">Get in touch</div>
+        <h3>Email <em>support</em></h3>
+        <p>Bug reports, feature requests, or general questions — we'd love to hear from you.</p>
+        <a href="mailto:es384425@gmail.com" class="btn btn-primary">
+          Email support
+          <span style="margin-left:2px;">→</span>
+        </a>
+        <p class="response-time">Replies typically within 24–48 hours</p>
+      </div>
+
+      <h3 class="faq-title">Frequently asked <em>questions</em></h3>
+
+      <div class="faq-item">
+        <div class="faq-question">How do I add a holding?</div>
+        <div class="faq-answer"><div class="faq-answer-inner">From the Holdings tab, tap the <strong>+</strong> button. Enter the ticker symbol, number of shares, cost basis, and purchase date. The app fetches current price and dividend data automatically.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How accurate are the dividend yields?</div>
+        <div class="faq-answer"><div class="faq-answer-inner">Yields are calculated from trailing-12-month dividend payments fetched from public market data. For consistent dividend payers (most blue-chip stocks and ETFs), yields are highly accurate. For variable-distribution funds (covered call ETFs, REITs), yields can fluctuate as recent payment history shifts.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How do I connect my brokerage account?</div>
+        <div class="faq-answer"><div class="faq-answer-inner">Go to Settings → <strong>Broker Sync</strong> → Connect Broker. You'll be redirected to SnapTrade's secure portal where you sign in to your broker. All connections are <strong>read-only</strong> — we cannot trade, transfer, or modify your account in any way.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Is my data secure?</div>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes. All your portfolio data is stored on your device, optionally synced to your personal iCloud. We don't have user accounts, don't collect personal information, and don't use third-party analytics. See the Privacy Policy section above for full details.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What's included in Pro?</div>
+        <div class="faq-answer"><div class="faq-answer-inner">Dividend Tracker Pro unlocks unlimited holdings, all themes, broker sync, advanced insights (concentration analysis, blended yield, tax estimates, what-if simulator), and CSV import. Free users can track up to 5 holdings with the default theme.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How do I cancel my subscription?</div>
+        <div class="faq-answer"><div class="faq-answer-inner">Settings → <strong>Manage Subscription</strong> opens iOS's subscription manager. You can cancel anytime; Pro features remain active until the end of your current billing period. Apple handles all subscription management.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Can I get a refund?</div>
+        <div class="faq-answer"><div class="faq-answer-inner">Refunds are processed by Apple, not by us. Visit <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> to request a refund. Apple typically approves refunds for accidental purchases or technical issues.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How do I import holdings from a CSV?</div>
+        <div class="faq-answer"><div class="faq-answer-inner">Settings → Data → <strong>Import CSV</strong>. The expected columns are: Symbol, Shares, Cost Basis, Purchase Date. A template is shown in the import sheet. You can export from most brokerages — see your broker's "Account Activity" or "Tax Documents" sections.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">A specific stock is showing wrong dividend data — what should I do?</div>
+        <div class="faq-answer"><div class="faq-answer-inner">Dividend data comes from public market sources and can occasionally have errors, especially for newly-listed stocks, recent splits, or special distributions. Pull down on the Holdings tab to refresh. If a specific stock still looks wrong, email us with the ticker and we'll investigate.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Does the app work offline?</div>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes. Your holdings and history are stored locally and viewable offline. Live prices and new dividend data require an internet connection.</div></div>
+      </div>
+
+      <div class="resources">
+        <h4>Other resources</h4>
+        <div class="resources-list">
+          <a href="#privacy">Privacy Policy →</a>
+          <a href="https://snaptrade.com/privacy">SnapTrade Privacy →</a>
+          <a href="https://reportaproblem.apple.com">Apple refund request →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-block" id="download" style="padding-top: 0;">
   <div class="container">
     <div class="cta-card">
       <h2>Start tracking your dividends <em>today</em>.</h2>
@@ -831,7 +725,7 @@ body {
 <footer class="footer">
   <div class="footer-inner">
     <div>
-      <a href="index.html" class="brand">
+      <a href="#top" class="brand">
         <span class="brand-mark"></span>
         Dividend Tracker
       </a>
@@ -840,13 +734,13 @@ body {
     <div class="footer-cols">
       <div class="footer-col">
         <div class="footer-col-title">Product</div>
-        <a href="index.html">Features</a>
+        <a href="#features">Features</a>
         <a href="#download">Download</a>
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Resources</div>
-        <a href="privacy.html">Privacy</a>
-        <a href="support.html">Support</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#support">Support</a>
         <a href="mailto:es384425@gmail.com">Contact</a>
       </div>
     </div>
@@ -856,6 +750,14 @@ body {
     <span>Not financial advice. Not affiliated with any brokerage.</span>
   </div>
 </footer>
+
+<script>
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-question').addEventListener('click', () => {
+      item.classList.toggle('open');
+    });
+  });
+</script>
 
 </body>
 </html>
