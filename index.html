@@ -405,6 +405,23 @@ body {
   .footer-cols { gap: 32px; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
 }
+
+/* Ensure interactive elements always sit above decorative overlays */
+.btn, a, button, input, .faq-item, .nav-links a {
+  position: relative;
+  z-index: 5;
+}
+/* Make ALL pseudo-element decorations click-transparent */
+*::before, *::after {
+  pointer-events: none;
+}
+.contact-card .btn,
+.cta-card .btn,
+.hero .btn {
+  position: relative;
+  z-index: 10;
+}
+
 </style>
 </head>
 <body>
