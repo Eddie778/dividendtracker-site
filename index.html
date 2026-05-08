@@ -420,28 +420,28 @@ body {
 }
 
 
-/* === GLOBAL FIX: italic serif descenders + gradient clipping === */
-/* Apply to every <em> with gradient text. Generous padding so descenders never clip. */
+
+/* === GLOBAL FIX: italic serif breathing room (bigger values) === */
 em {
   display: inline-block;
-  padding: 0.15em 0.2em 0.3em 0.05em;
-  margin: -0.15em -0.2em -0.3em -0.05em;
+  padding: 0.3em 0.4em 0.5em 0.15em;
+  margin: -0.3em -0.4em -0.5em -0.15em;
   overflow: visible;
-  line-height: 1.3;
+  line-height: 1.4;
 }
 .hero h1, .section-title, .cta-card h2, .contact-card h3, .faq-title, .summary-card h3 {
   overflow: visible;
-  padding-bottom: 0.15em;
+  padding-bottom: 0.4em;
+  line-height: 1.25;
 }
-/* Decorative pseudo-elements never block clicks */
+/* Decorations don't intercept clicks */
 .contact-card::before, .contact-card::after,
 .cta-card::before, .cta-card::after,
-.summary-card::before,
-.feature-card::before,
+.summary-card::before, .feature-card::before,
 .bg-glow::before, .bg-glow::after {
   pointer-events: none;
 }
-/* Buttons + nav links always above decorations */
+/* Buttons + nav links always clickable above decorative layers */
 .btn, .nav-links a, .faq-question, .footer a, a[href^="mailto:"] {
   position: relative;
   z-index: 5;
