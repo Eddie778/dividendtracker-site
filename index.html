@@ -424,7 +424,8 @@ body {
 
 
 
-/* === HUGE padding so descenders/punctuation never clip === */
+
+/* === Bulletproof heading breathing room (pixel-based) === */
 .hero h1,
 .section-title,
 .cta-card h2,
@@ -433,13 +434,20 @@ body {
 .summary-card h3 {
   overflow: visible;
   line-height: 1.5;
-  padding: 0.5em 0.6em 0.7em 0.6em;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-bottom: 20px;
 }
+
 em {
   overflow: visible;
   display: inline;
-  padding-right: 0.15em;
+  padding-right: 8px;
+  padding-left: 4px;
 }
+
 .contact-card::before, .contact-card::after,
 .cta-card::before, .cta-card::after,
 .summary-card::before, .feature-card::before,
