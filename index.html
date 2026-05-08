@@ -423,7 +423,8 @@ body {
 
 
 
-/* === Heading breathing room (no negative margins) === */
+
+/* === HUGE padding so descenders/punctuation never clip === */
 .hero h1,
 .section-title,
 .cta-card h2,
@@ -431,17 +432,14 @@ body {
 .faq-title,
 .summary-card h3 {
   overflow: visible;
-  line-height: 1.25;
-  padding-bottom: 0.4em;
+  line-height: 1.5;
+  padding: 0.5em 0.6em 0.7em 0.6em;
 }
-
-/* em just gets overflow visible, no padding/margin shenanigans */
 em {
   overflow: visible;
   display: inline;
+  padding-right: 0.15em;
 }
-
-/* Decorative overlays don't block clicks */
 .contact-card::before, .contact-card::after,
 .cta-card::before, .cta-card::after,
 .summary-card::before, .feature-card::before,
