@@ -422,6 +422,29 @@ body {
   z-index: 10;
 }
 
+
+/* Fix question mark + descender clipping on italic serif headings */
+.section-title,
+.hero h1,
+.cta-card h2,
+.contact-card h3,
+.faq-title {
+  overflow: visible;
+  padding-bottom: 0.25em;
+  line-height: 1.15;
+}
+.section-title em,
+.hero h1 em,
+.cta-card h2 em,
+.contact-card h3 em,
+.faq-title em {
+  display: inline-block;
+  padding-right: 0.15em;
+  padding-bottom: 0.3em;
+  line-height: 1.4;
+  overflow: visible;
+}
+
 </style>
 </head>
 <body>
